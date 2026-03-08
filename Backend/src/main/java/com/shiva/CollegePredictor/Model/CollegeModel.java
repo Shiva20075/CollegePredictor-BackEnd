@@ -21,5 +21,6 @@ public class CollegeModel {
     private String category;
     private String gender;
     private int closing_rank;
+    //in be
 
 }
