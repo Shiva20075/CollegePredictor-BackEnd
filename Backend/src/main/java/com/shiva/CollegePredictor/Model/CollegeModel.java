@@ -8,7 +8,7 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @Entity
-@Table(name = "exam_cutoffs", schema = "college_predictor")
+@Table(name = "exam_cutoffs")
 
 public class CollegeModel {
 
@@ -21,6 +21,6 @@ public class CollegeModel {
     private String category;
     private String gender;
     private int closing_rank;
-    //in be
+
 
 }
