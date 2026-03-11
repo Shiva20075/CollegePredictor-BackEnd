@@ -12,7 +12,6 @@ public class CollegeService {
 
     public CollegeModel getEligibleCollege(int rank, String gender, String category, String exam){
         CollegeModel college =  collegeRepo.findEligibleCollege(rank,gender,category,exam);
-        System.out.println("College : " + college);
         return college;
     }
 }
