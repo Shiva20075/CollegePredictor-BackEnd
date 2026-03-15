@@ -1,4 +1,4 @@
-package com.shiva.CollegePredictor;
+package com.shiva.collegePredictor;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

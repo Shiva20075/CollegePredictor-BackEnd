@@ -1,6 +1,7 @@
-package com.shiva.CollegePredictor.Controller;
-import com.shiva.CollegePredictor.Model.CollegeModel;
-import com.shiva.CollegePredictor.Service.CollegeService;
+package com.shiva.collegePredictor.controller;
+
+import com.shiva.collegePredictor.model.CollegeModel;
+import com.shiva.collegePredictor.service.CollegeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -13,7 +14,7 @@ public class CollegeController {
     public CollegeService collegeService;
 
     @GetMapping("/predictCollege")
-    public CollegeModel predictCollege(@RequestParam int rank, @RequestParam String gender, @RequestParam String category, @RequestParam String exam){
+    public CollegeModel predictCollege(@RequestParam int rank, @RequestParam String gender, @RequestParam String category, @RequestParam String exam) {
             return collegeService.getEligibleCollege(rank,gender,category,exam);
     }
 }
