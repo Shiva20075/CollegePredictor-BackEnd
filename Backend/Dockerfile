@@ -1,6 +1,11 @@
 FROM eclipse-temurin:21-jdk
-WORKDIR /app
-COPY . .
-RUN ./mvnw clean package -DskipTests
 
-CMD ["java", "-jar", "target/collegepredictor-0.0.1-SNAPSHOT.jar"]
+WORKDIR /app
+
+COPY . .
+
+RUN chmod +x mvnw && ./mvnw clean package -DskipTests
+
+EXPOSE 8080
+
+CMD ["sh", "-c", "java -jar target/*.jar"]
