@@ -10,7 +10,8 @@ import java.util.List;
 @RestController
 @CrossOrigin(origins = {
         "http://localhost:3001",
-        "https://college-predictor-frontend.vercel.app"
+        "https://college-predictor-frontend.vercel.app",
+        "https://college-predictor-frontend-hw1hqkj00-shiva20075s-projects.vercel.app"
 })
 @RequestMapping("/api")
 public class CollegeController {
