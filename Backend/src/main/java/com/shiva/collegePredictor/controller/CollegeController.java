@@ -16,8 +16,13 @@ public class CollegeController {
     public CollegeService collegeService;
 
     @GetMapping("/predictCollege")
-    public CollegeModel predictCollege(@RequestParam int rank, @RequestParam String gender, @RequestParam String category, @RequestParam String exam) {
-            return collegeService.getEligibleCollege(rank,gender,category,exam);
+    public CollegeModel predictCollege(
+            @RequestParam int rank,
+            @RequestParam String gender,
+            @RequestParam String category,
+            @RequestParam String exam
+    ) {
+        return collegeService.getEligibleCollege(rank, gender, category, exam);
     }
 
     @GetMapping("/getCategory")
@@ -28,5 +33,9 @@ public class CollegeController {
     @GetMapping("/getGender")
     public List<String> getGender(@RequestParam String exam) {
         return collegeService.getGender(exam);
+    }
+
+    @RequestMapping(method = RequestMethod.OPTIONS, value = "/**")
+    public void handleOptions() {
     }
 }
