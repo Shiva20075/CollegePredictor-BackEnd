@@ -2,22 +2,24 @@ package com.shiva.collegePredictor;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.security.config.annotation.web.builders.HttpSecurity;
-import org.springframework.security.web.SecurityFilterChain;
+import org.springframework.web.servlet.config.annotation.CorsRegistry;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 @Configuration
-public class SecurityConfig {
+public class CorsConfig {
 
     @Bean
-    public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
-        http
-                .cors() // enable CORS
-                .and()
-                .csrf().disable() // disable CSRF
-                .authorizeHttpRequests(auth -> auth
-                        .anyRequest().permitAll() // allow all requests
-                );
+    public WebMvcConfigurer corsConfigurer() {
+        return new WebMvcConfigurer() {
 
-        return http.build();
+            @Override
+            public void addCorsMappings(CorsRegistry registry) {
+
+                registry.addMapping("/**")   // allow ALL endpoints
+                        .allowedOrigins("*") // allow all domains
+                        .allowedMethods("*") // allow all methods
+                        .allowedHeaders("*");
+            }
+        };
     }
 }
